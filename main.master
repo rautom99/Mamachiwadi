@@ -1,0 +1,139 @@
+﻿<%@ Master Language="VB" CodeFile="main.master.vb" Inherits="main" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+   
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Rochester' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Exo:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/responsiveslides.min.js"></script>
+
+    <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <script>
+        $(function () {
+            $("#slider1").responsiveSlides({
+                auto: true,
+                speed: 500,
+                namespace: "callbacks",
+                pager: true,
+            });
+        });
+    </script>
+    <!----->
+    <!---- start-smoth-scrolling---->
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript">
+        //jQuery(document).ready(function ($) {
+        //    $(".scroll").click(function (event) {
+        //        event.preventDefault();
+        //        $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1200);
+        //    });
+        //});
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /*
+            var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear' 
+            };
+            */
+            $().UItoTop({ easingType: 'easeOutQuart' });
+        });
+    </script>
+    <!---End-smoth-scrolling---->
+    <link rel="stylesheet" href="css/swipebox.css">
+    <script src="js/jquery.swipebox.min.js"></script>
+    <script type="text/javascript">
+        jQuery(function ($) {
+            $(".swipebox").swipebox();
+        });
+    </script>
+   
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="header" id="home">
+            <div class="header-top">
+                <div class="container">
+                    <div class="logo">
+                        <a href="index.aspx">
+                            <img src="mamachiwadilogo.png" height="50" width="100"/></a>
+                    </div>
+                    <div class="top-menu">
+                        <span class="menu">
+                            <img src="images/nav.png" alt="" />
+                        </span>
+                        <ul>
+                           
+                                <li><a href="index.aspx" class="active scroll">Home</a></li>
+                                <li><a href="gallery.aspx" class="scroll">Gallery</a></li>
+                                <li><a href="booking.aspx" class="scroll">Booking</a></li>
+                                <li><a href="nearbyplaces.aspx" class="scroll">Near by Places</a></li>
+                                <li><a href="index.aspx#contact" class="scroll">Contact</a></li>
+                            <li><a href="adminlogin.aspx" class="scroll">Admin Login</a></li>
+                        </ul>
+                    </div>
+                    <!--script-nav-->
+                    <script>
+                        $("span.menu").click(function () {
+                            $(".top-menu ul").slideToggle("slow", function () {
+                            });
+                        });
+                    </script>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+     
+        <div class="footer-section">
+            <div class="container">
+                <div class="footer-top">
+                    <div class="">
+                        <%--<a href="#"><i class="icon1"></i></a>
+                        <a href="#"><i class="icon2"></i></a>--%>
+                        <a href="https://www.facebook.com/mamachiwadi.murudjanjira"><i class="fa fa-facebook-official" style="color:white;font-size:50px" aria-hidden="true"></i></a>
+                        &nbsp;&nbsp;&nbsp;
+                         <a href="https://instagram.com/mamachiwadi?igshid=jp3kf9fg9vq4"><i class="fa fa-instagram" aria-hidden="true" style="color:white;font-size:50px"></i></a>
+                       
+                       <%-- <a href="#"><i class="icon3"></i></a>--%>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>Copyright &copy;2015  All rights  Reserved | Mamachiwadi.com</p>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        /*
+                        var defaults = {
+                            containerID: 'toTop', // fading element id
+                            containerHoverID: 'toTopHover', // fading element hover id
+                            scrollSpeed: 1200,
+                            easingType: 'linear' 
+                        };
+                        */
+
+                        $().UItoTop({ easingType: 'easeOutQuart' });
+
+                    });
+                </script>
+                <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
